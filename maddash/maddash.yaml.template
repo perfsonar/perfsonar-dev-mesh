@@ -27,7 +27,6 @@ serverHost: "localhost"
 http: 
     port: 8881
 
-
 ##
 # 'groups' are where you define lists of hosts. You need to provide the name of the group 
 # and the list of the hosts in that group. The default example below defines two groups:

@@ -30,7 +30,7 @@ do
     if [ $? != 0 ]; then
        echo "Error generating JSON file ${MESH}.json"
     else
-       cp -f /tmp/${MESH}.json /var/www/html/${MESH}.json
+       cp -f /tmp/${MESH}.json /var/www/html/mesh_config/${MESH}.json
        rm -f /tmp/${MESH}.json
        echo "New JSON file available ${MESH}.json"
      fi
