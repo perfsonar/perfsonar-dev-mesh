@@ -53,7 +53,7 @@ groups:
 
     smallnodetests:
         - "ps-test.ctc.grnoc.iu.edu"
-        - "198.128.140.238"
+        - "128.3.125.25"
         - "129.79.9.10"
  
 ##
@@ -82,11 +82,11 @@ groupMembers:
     - id: "perfsonardev0.internet2.edu"
       label: "perfsonardev0.internet2.edu"
       pstoolkiturl: "http://ps-test.ctc.grnoc.iu.edu/toolkit/" 
-    - id: "198.128.140.238"    
-      label: "bltierney-liva.es.net"
+    - id: "128.3.125.25"    
+      label: "perfsonar-liva.dhcp.lbl.gov"
       pstoolkiturl: "http://ps-test.ctc.grnoc.iu.edu/toolkit/"
     - id: "129.79.9.10"    
-      label: "daldoyle-liva.es.net"
+      label: "daldoyle-liva.grnoc.iu.edu"
       pstoolkiturl: "http://ps-test.ctc.grnoc.iu.edu/toolkit/"
     - id: "ma-dev2.bldc.grnoc.iu.edu"
       label: "ma-dev2.bldc.grnoc.iu.edu"
