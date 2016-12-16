@@ -24,7 +24,7 @@ git pull
 #get list of files
 cp /etc/maddash/maddash-server/maddash.yaml /etc/maddash/maddash-server/maddash.yaml.bak
 cp /opt/perfsonar_ps/perfsonar-dev-mesh/maddash/maddash.yaml.template /etc/maddash/maddash-server/maddash.yaml
-cp /opt/perfsonar_ps/perfsonar-dev-mesh/maddash/gui_agent_configuration.conf /etc/perfsonar/meshconfig-guiagent.conf
+cp /opt/perfsonar_ps/perfsonar-dev-mesh/maddash/meshconfig-guiagent.conf /etc/perfsonar/meshconfig-guiagent.conf
 #Try to generate config. If fails, restore backup and exit
 CONFIG_OUTPUT=$( /usr/lib/perfsonar/bin/generate_gui_configuration 2>&1 ) 
 echo $CONFIG_OUTPUT
