@@ -1,1 +1,0 @@
-2,32 * * * * root /opt/perfsonar_ps/perfsonar-dev-mesh/scripts/generate_maddash_config.sh > /tmp/generate_maddash_config.sh.log 2>&1 
