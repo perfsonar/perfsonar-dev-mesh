@@ -21,3 +21,6 @@ do
      fi
      echo ""
 done
+
+cd /opt/perfsonar_ps/perfsonar-dev-mesh/maddash
+cp meshconfig-guiagent.conf /etc/perfsonar/meshconfig-guiagent.conf
