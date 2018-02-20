@@ -22,5 +22,8 @@ do
      echo ""
 done
 
+#Copy psconfig files 
+cp -f *.json /var/www/mesh_config/
+
 cd /opt/perfsonar_ps/perfsonar-dev-mesh/maddash
 cp meshconfig-guiagent.conf /etc/perfsonar/meshconfig-guiagent.conf
