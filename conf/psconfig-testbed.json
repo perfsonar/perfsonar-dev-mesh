@@ -139,6 +139,13 @@
                 "organization": "GEANT"
             }
         },
+        "pstest2.geant.carnet.hr": { 
+            "address": "pstest2.geant.carnet.hr",
+            "_meta": {
+                "display-name": "pstest2.geant.carnet.hr (Debian9, 4.0)",
+                "organization": "GEANT"
+            }
+        },
         "ps-4-0.qalab.geant.net": { 
             "address": "ps-4-0.qalab.geant.net",
             "_meta": {
