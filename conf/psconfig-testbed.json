@@ -404,8 +404,6 @@
             "spec": {
                 "source": "{% address[0] %}",
                 "dest": "{% address[1] %}",
-                "wait": "PT5S",
-                "sendwait": "PT30S",
                 "ip-version": 4
             }
         },
@@ -414,8 +412,6 @@
             "spec": {
                 "source": "{% address[0] %}",
                 "dest": "{% address[1] %}",
-                "wait": "PT5S",
-                "sendwait": "PT30S",
                 "ip-version": 6
             }
         },
