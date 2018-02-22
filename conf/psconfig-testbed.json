@@ -470,7 +470,7 @@
             "test": "throughput_iperf3_tcp_test_v4",
             "schedule": "repeat-PT4H",
             "archives": [ "iu-central-archive" ],
-            "tools": [ "iperf3" ],
+            "tools": [ "bwctliperf3", "iperf3" ],
             "_meta": {
                 "display-name": "iperf3 TCP Test Between Testbeds"
             }
@@ -480,7 +480,7 @@
             "test": "throughput_iperf3_udp_test_v4",
             "schedule": "repeat-PT4H",
             "archives": [ "iu-central-archive" ],
-            "tools": [ "iperf3" ],
+            "tools": [ "bwctliperf3", "iperf3" ],
             "_meta": {
                 "display-name": "iperf3 UDP Test Between Testbeds"
             }
@@ -528,7 +528,7 @@
             "test": "throughput_iperf3_tcp_test_v6",
             "schedule": "repeat-PT4H",
             "archives": [ "iu-central-archive" ],
-            "tools": [ "iperf3" ],
+            "tools": [ "bwctliperf3", "iperf3" ],
             "_meta": {
                 "display-name": "IPv6 iperf3 TCP Test Between Testbeds"
             }
@@ -539,7 +539,7 @@
             "test": "throughput_iperf3_udp_test_v6",
             "schedule": "repeat-PT4H",
             "archives": [ "iu-central-archive" ],
-            "tools": [ "iperf3" ],
+            "tools": [ "bwctliperf3", "iperf3" ],
             "_meta": {
                 "display-name": "IPv6 iperf3 UDP Test Between Testbeds"
             }
