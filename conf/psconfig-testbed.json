@@ -512,7 +512,7 @@
         },
         "rtt-v4": {
             "group": "pscheduler_hosts",
-            "test": "latencybg_test_v4",
+            "test": "rtt_test_v4",
             "schedule": "repeat-PT15M",
             "archives": [ "iu-central-archive" ],
             "_meta": {
@@ -575,7 +575,7 @@
         "rtt-v6": {
             "disabled": true,
             "group": "v6_hosts_latency",
-            "test": "latencybg_test_v6",
+            "test": "rtt_test_v6",
             "schedule": "repeat-PT15M",
             "archives": [ "iu-central-archive" ],
             "_meta": {
