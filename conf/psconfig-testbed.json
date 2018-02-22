@@ -455,7 +455,7 @@
             "slip": "PT10M"
         },
         "repeat-PT15M": {
-            "repeat": "PT4H",
+            "repeat": "PT15M",
             "sliprand": true,
             "slip": "PT15M"
         }
