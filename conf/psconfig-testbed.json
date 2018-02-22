@@ -78,11 +78,11 @@
                 "organization": "ESnet"
             }
         },
-        "test-owamp.es.net": { 
-            "address": "test-owamp.es.net",
+        "test-owamp1.es.net": { 
+            "address": "test-owamp1.es.net",
             "host": "test-pt1.es.net",
             "_meta": {
-                "display-name": "test-owamp.es.net (CentOS7, 4.0)",
+                "display-name": "test-owamp1.es.net (CentOS7, 4.0)",
                 "organization": "ESnet"
             }
         },
