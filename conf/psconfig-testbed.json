@@ -32,34 +32,34 @@
                 "organization": "GlobalNOC"
             }
         },
-        "ps-deb.es.net": { 
-            "address": "ps-deb.es.net",
+        "ps-dev-deb8-1.es.net": { 
+            "address": "ps-dev-deb8-1.es.net",
             "_meta": {
-                "display-name": "ps-deb.es.net (Debian8, 3.5)",
+                "display-name": "ps-dev-deb8-1.es.net (Debian8, 3.5)",
                 "organization": "ESnet"
             }
         },
-        "antg-dev.es.net": { 
-            "address": "antg-dev.es.net",
+        "ps-dev-el6-1.es.net": { 
+            "address": "ps-dev-el6-1.es.net",
             "_meta": {
-                "display-name": "antg-dev.es.net (EL6, 4.0)",
+                "display-name": "ps-dev-el6-1.es.net (EL6, 4.0)",
                 "organization": "ESnet"
             }
         },
-        "antg-staging.es.net": { 
-            "address": "antg-staging.es.net",
+        "ps-dev-el7-1.es.net": { 
+            "address": "ps-dev-el7-1.es.net",
             "labels": {
                 "ipv6": { "address": "2001:400:210:151::25" }
             },
             "_meta": {
-                "display-name": "antg-staging.es.net (EL7 4.0)",
+                "display-name": "ps-dev-el7-1.es.net (EL7 4.0)",
                 "organization": "ESnet"
             }
         },
-        "ps-deb-2.es.net": { 
-            "address": "ps-deb-2.es.net",
+        "ps-dev-deb8-2.es.net": { 
+            "address": "ps-dev-deb8-2.es.net",
             "_meta": {
-                "display-name": "ps-deb.es.net (Debian8, 4.0)",
+                "display-name": "ps-dev-deb8-2.es.net (Debian8, 4.0)",
                 "organization": "ESnet"
             }
         },
@@ -167,14 +167,14 @@
             "type": "mesh",
             "addresses": [
                 { "name": "perfsonar-dev5.grnoc.iu.edu" },
-                { "name": "ps-deb.es.net" },
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "perfsonardev0.internet2.edu" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu"},
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
@@ -188,14 +188,14 @@
             "type": "mesh",
             "addresses": [
                 { "name": "perfsonar-dev5.grnoc.iu.edu" },
-                { "name": "ps-deb.es.net" },
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "perfsonardev0.internet2.edu" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu"},
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
@@ -209,14 +209,14 @@
             "type": "mesh",
             "addresses": [
                 { "name": "perfsonar-dev5.grnoc.iu.edu" },
-                { "name": "ps-deb.es.net" },
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "perfsonardev0.internet2.edu" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu"},
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
@@ -229,13 +229,13 @@
         "pscheduler_hosts": {
             "type": "mesh",
             "addresses": [
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "perfsonardev0.internet2.edu" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu" },
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
@@ -247,12 +247,12 @@
         "pscheduler_hosts_minusi2": {
             "type": "mesh",
             "addresses": [
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu" },
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
@@ -265,13 +265,13 @@
             "type": "mesh",
             "addresses": [
                 { "name": "perfsonar-dev5.grnoc.iu.edu" },
-                { "name": "ps-deb.es.net" },
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" },
                 { "name": "ma-dev2.bldc.grnoc.iu.edu" },
                 { "name": "perfsonar-dev.grnoc.iu.edu"},
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
@@ -284,10 +284,10 @@
         "v6_hosts_throughput": {
             "type": "mesh",
             "addresses": [
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net", "label": "ipv6" },
-                { "name": "ps-deb.es.net" },
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net", "label": "ipv6" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "test-pt1.es.net" },
                 { "name": "lbl-pt1-v6.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" }
@@ -297,10 +297,10 @@
         "v6_hosts_latency": {
             "type": "mesh",
             "addresses": [
-                { "name": "antg-dev.es.net" },
-                { "name": "antg-staging.es.net", "label": "ipv6" },
-                { "name": "ps-deb.es.net" },
-                { "name": "ps-deb-2.es.net" },
+                { "name": "ps-dev-el6-1.es.net" },
+                { "name": "ps-dev-el7-1.es.net", "label": "ipv6" },
+                { "name": "ps-dev-deb8-1.es.net" },
+                { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "test-owamp1.es.net" },
                 { "name": "lbl-owamp-v6.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" }
