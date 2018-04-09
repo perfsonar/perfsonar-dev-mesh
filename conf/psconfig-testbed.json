@@ -70,22 +70,6 @@
                 "organization": "ESnet"
             }
         },
-        "test-pt1.es.net": { 
-            "address": "test-pt1.es.net",
-            "host": "test-pt1.es.net",
-            "_meta": {
-                "display-name": "test-pt1.es.net (CentOS7, 4.0)",
-                "organization": "ESnet"
-            }
-        },
-        "test-owamp1.es.net": { 
-            "address": "test-owamp1.es.net",
-            "host": "test-pt1.es.net",
-            "_meta": {
-                "display-name": "test-owamp1.es.net (CentOS7, 4.0)",
-                "organization": "ESnet"
-            }
-        },
         "lbl-pt1.es.net": { 
             "address": "lbl-pt1.es.net",
             "host": "lbl-pt1.es.net",
@@ -179,8 +163,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-owamp1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -200,8 +183,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-pt1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -221,8 +203,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-pt1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -239,8 +220,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-pt1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -256,8 +236,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-pt1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -276,8 +255,7 @@
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
                 { "name": "pstest.geant.carnet.hr" },
-                { "name": "pstest2.geant.carnet.hr" },
-                { "name": "test-pt1.es.net" }
+                { "name": "pstest2.geant.carnet.hr" }
             ]
         },
         
@@ -288,7 +266,6 @@
                 { "name": "ps-dev-el7-1.es.net", "label": "ipv6" },
                 { "name": "ps-dev-deb8-1.es.net" },
                 { "name": "ps-dev-deb8-2.es.net" },
-                { "name": "test-pt1.es.net" },
                 { "name": "lbl-pt1-v6.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" }
             ]
@@ -301,7 +278,6 @@
                 { "name": "ps-dev-el7-1.es.net", "label": "ipv6" },
                 { "name": "ps-dev-deb8-1.es.net" },
                 { "name": "ps-dev-deb8-2.es.net" },
-                { "name": "test-owamp1.es.net" },
                 { "name": "lbl-owamp-v6.es.net" },
                 { "name": "t2-psdev.rrze.uni-erlangen.de" }
             ]
@@ -309,7 +285,6 @@
     },
     
     "hosts": {
-        "test-pt1.es.net": {},
         "lbl-pt1.es.net": {}
     },
     
