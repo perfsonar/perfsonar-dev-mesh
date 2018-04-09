@@ -28,4 +28,4 @@ done
 cp -f *.json /var/www/mesh_config/
 
 cd /opt/perfsonar_ps/perfsonar-dev-mesh/maddash
-cp meshconfig-guiagent.conf /etc/perfsonar/meshconfig-guiagent.conf
+cp meshconfig-guiagent-staging.conf /etc/perfsonar/meshconfig-guiagent.conf
