@@ -116,13 +116,6 @@
                 "organization": "GEANT"
             }
         },
-        "pstest.geant.carnet.hr": { 
-            "address": "pstest.geant.carnet.hr",
-            "_meta": {
-                "display-name": "pstest.geant.carnet.hr (Debian7, 4.0)",
-                "organization": "GEANT"
-            }
-        },
         "pstest2.geant.carnet.hr": { 
             "address": "pstest2.geant.carnet.hr",
             "_meta": {
@@ -162,7 +155,6 @@
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
@@ -182,7 +174,6 @@
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
@@ -202,7 +193,6 @@
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
@@ -219,7 +209,6 @@
                 { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
@@ -235,7 +224,6 @@
                 { "name": "ps-dev-deb8-2.es.net" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
@@ -254,7 +242,6 @@
                 { "name": "perfsonar-liva.lbl.gov" },
                 { "name": "ps-4-0.qalab.geant.net" },
                 { "name": "ps-4-0-xenial.qalab.geant.net" },
-                { "name": "pstest.geant.carnet.hr" },
                 { "name": "pstest2.geant.carnet.hr" }
             ]
         },
