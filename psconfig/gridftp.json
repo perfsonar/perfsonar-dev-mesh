@@ -70,11 +70,12 @@
     },
     
     "tasks": {
-        "disktodisk_task": {
+        "gridftp_task": {
             "group": "disktodisk_group",
             "test": "disktodisk_test",
             "schedule": "schedule_PT1H",
             "archives": [ "nightly_archive" ],
+            "tools": [ "globus" ],
             "_meta": {
                 "display-name": "GridFTP Tests"
             }
