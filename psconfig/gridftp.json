@@ -53,7 +53,7 @@
         "disktodisk_test": {
             "type": "disk-to-disk",
             "spec": {
-                "source": "ftp://{% address[0] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
+                "source": "ftp://{% address[1] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
                 "dest": "{% jq .addresses[0]._meta.gridftp_filename %}",
                 "timeout": "PT10S",
                 "cleanup": true
