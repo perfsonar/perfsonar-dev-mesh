@@ -1,0 +1,83 @@
+{
+    "_meta":{
+        "display-name": "GridFTP Development"
+    },
+    
+    "archives": {
+        "nightly_archive": {
+            "archiver": "esmond",
+            "data": {
+                "measurement-agent": "{% scheduled_by_address %}",
+                "url": "https://perfsonar-testbed-ma.grnoc.iu.edu/esmond/perfsonar/archive/"
+            }
+        }
+    },
+    
+    "addresses": {
+        "ps-dev-gridftp1.es.net": { 
+            "address": "ps-dev-gridftp1.es.net",
+            "_meta": {
+                "gridftp_filename": "/tmp/test.out"
+            }
+        },
+        "ps-dev-gridftp2.es.net": { 
+            "address": "ps-dev-gridftp2.es.net",
+            "_meta": {
+                "gridftp_filename": "/tmp/test.out"
+            }
+        },
+        "sunn-dtn.es.net": { 
+            "address": "sunn-dtn.es.net",
+            "no-agent": true,
+            "_meta": {
+                "gridftp_port": 2811,
+                "gridftp_filename": "/data1/10M.dat"
+            }
+        }
+    },
+    
+    "groups": {
+        "disktodisk_group": {
+            "type": "disjoint",
+            "unidirectional": true,
+            "a-addresses": [
+                { "name": "ps-dev-gridftp2.es.net" }
+            ],
+            "b-addresses": [
+                { "name": "sunn-dtn.es.net" }
+            ]
+        }
+    },
+    
+    "tests": {
+        "disktodisk_test": {
+            "type": "disk-to-disk",
+            "spec": {
+                "source": "ftp://{% address[0] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
+                "dest": "{% jq .addresses[0]._meta.gridftp_filename %}",
+                "timeout": "PT10S",
+                "cleanup": true
+            }
+        }
+    },
+    
+    "schedules": {
+        "schedule_PT1H": {
+            "repeat": "PT1H",
+            "sliprand": true,
+            "slip": "PT1H"
+        }
+    },
+    
+    "tasks": {
+        "disktodisk_task": {
+            "group": "disktodisk_group",
+            "test": "disktodisk_test",
+            "schedule": "schedule_PT1H",
+            "archives": [ "nightly_archive" ],
+            "_meta": {
+                "display-name": "GridFTP Tests"
+            }
+        }
+    }
+}
