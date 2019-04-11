@@ -15,10 +15,10 @@
     
     "addresses": {
         "ps-dev-gridftp1.es.net": { 
-            "address": "ps-dev-gridftp1.es.net",
+            "address": "ps-dev-gridftp1.es.net"
         },
         "ps-dev-gridftp2.es.net": { 
-            "address": "ps-dev-gridftp2.es.net",
+            "address": "ps-dev-gridftp2.es.net"
         },
         "sunn-dtn.es.net": { 
             "address": "sunn-dtn.es.net",
