@@ -16,22 +16,16 @@
     "addresses": {
         "ps-dev-gridftp1.es.net": { 
             "address": "ps-dev-gridftp1.es.net",
-            "_meta": {
-                "gridftp_filename": "/tmp/test.out"
-            }
         },
         "ps-dev-gridftp2.es.net": { 
             "address": "ps-dev-gridftp2.es.net",
-            "_meta": {
-                "gridftp_filename": "/tmp/test.out"
-            }
         },
         "sunn-dtn.es.net": { 
             "address": "sunn-dtn.es.net",
             "no-agent": true,
             "_meta": {
                 "gridftp_port": 2811,
-                "gridftp_filename": "/data1/10M.dat"
+                "gridftp_filename": "/data1/1G.dat"
             }
         }
     },
@@ -41,6 +35,7 @@
             "type": "disjoint",
             "unidirectional": true,
             "a-addresses": [
+                { "name": "ps-dev-gridftp1.es.net" },
                 { "name": "ps-dev-gridftp2.es.net" }
             ],
             "b-addresses": [
@@ -54,7 +49,7 @@
             "type": "disk-to-disk",
             "spec": {
                 "source": "ftp://{% address[1] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
-                "dest": "{% jq .addresses[0]._meta.gridftp_filename %}",
+                "dest": "file:///dev/null",
                 "timeout": "PT10S",
                 "cleanup": true
             }
