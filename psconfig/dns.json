@@ -51,7 +51,7 @@
             "type": "dns",
             "spec": {
                 "record": "a",
-                "query": "{% address[1]"
+                "query": "{% address[1] %}"
             }
         }
     },
