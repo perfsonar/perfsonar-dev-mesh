@@ -1,0 +1,78 @@
+{
+    "_meta":{
+        "display-name": "HTTP Development"
+    },
+    
+    "archives": {
+        "nightly_archive": {
+            "archiver": "esmond",
+            "data": {
+                "measurement-agent": "{% scheduled_by_address %}",
+                "url": "https://perfsonar-testbed-ma.grnoc.iu.edu/esmond/perfsonar/archive/"
+            }
+        }
+    },
+    
+    "addresses": {
+        "ps-dev-gridftp1.es.net": { 
+            "address": "ps-dev-gridftp1.es.net"
+        },
+        "ps-dev-el7-1.es.net": { 
+            "address": "ps-dev-el7-1.es.net",
+            "no-agent": true
+        },
+        "amst-pt1.es.net": { 
+            "address": "amst-pt1.es.net",
+            "no-agent": true
+        },
+        "tb-el7-minor.ps.dev.internet2.edu": { 
+            "address": "tb-el7-minor.ps.dev.internet2.edu",
+            "no-agent": true
+        }
+    },
+    
+    "groups": {
+        "http_group": {
+            "type": "disjoint",
+            "unidirectional": true,
+            "a-addresses": [
+                { "name": "ps-dev-gridftp1.es.net" }
+            ],
+            "b-addresses": [
+                { "name": "ps-dev-el7-1.es.net" },
+                { "name": "amst-pt1.es.net" },
+                { "name": "tb-el7-minor.ps.dev.internet2.edu" }
+            ]
+        }
+    },
+    
+    "tests": {
+        "http_pscheduler_api_test": {
+            "type": "http",
+            "spec": {
+                "url": "https://{% address[1] %}/pscheduler",
+                "parse": "API server"
+            }
+        }
+    },
+    
+    "schedules": {
+        "schedule_PT1H": {
+            "repeat": "PT1H",
+            "sliprand": true,
+            "slip": "PT1H"
+        }
+    },
+    
+    "tasks": {
+        "gridftp_task": {
+            "group": "http_group",
+            "test": "http_pscheduler_api_test",
+            "schedule": "schedule_PT1H",
+            "archives": [ "nightly_archive" ],
+            "_meta": {
+                "display-name": "HTTP pScheduler API Tests"
+            }
+        }
+    }
+}
