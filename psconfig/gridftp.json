@@ -57,9 +57,9 @@
     
     "schedules": {
         "schedule_PT1H": {
-            "repeat": "PT1H",
+            "repeat": "PT30M",
             "sliprand": true,
-            "slip": "PT1H"
+            "slip": "PT25M"
         }
     },
     
