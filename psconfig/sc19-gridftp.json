@@ -1,0 +1,101 @@
+{
+    "_meta":{
+        "display-name": "GridFTP Development"
+    },
+    
+    "archives": {
+        "nightly_archive": {
+            "archiver": "esmond",
+            "data": {
+                "measurement-agent": "{% scheduled_by_address %}",
+                "url": "https://140.221.250.26/esmond/perfsonar/archive/"
+            }
+        }
+    },
+    
+    "addresses": {
+        "140.221.249.211": { 
+            "address": "140.221.249.211"
+        },
+        "sunn-dtn.es.net": { 
+            "address": "sunn-dtn.es.net",
+            "no-agent": true,
+            "_meta": {
+                "gridftp_port": 2811,
+                "gridftp_filename": "/data1/1G.dat"
+            }
+        },
+        "newy-dtn.es.net": { 
+            "address": "newy-dtn.es.net",
+            "no-agent": true,
+            "_meta": {
+                "gridftp_port": 2811,
+                "gridftp_filename": "/data1/1G.dat"
+            }
+        },
+        "star-dtn.es.net": { 
+            "address": "star-dtn.es.net",
+            "no-agent": true,
+            "_meta": {
+                "gridftp_port": 2811,
+                "gridftp_filename": "/data1/1G.dat"
+            }
+        },
+        "cern-dtn.es.net": { 
+            "address": "cern-dtn.es.net",
+            "no-agent": true,
+            "_meta": {
+                "gridftp_port": 2811,
+                "gridftp_filename": "/data1/1G.dat"
+            }
+        }
+    },
+    
+    "groups": {
+        "disktodisk_group": {
+            "type": "disjoint",
+            "unidirectional": true,
+            "a-addresses": [
+                { "name": "140.221.249.211" }
+            ],
+            "b-addresses": [
+                { "name": "sunn-dtn.es.net" },
+                { "name": "newy-dtn.es.net" },
+                { "name": "cern-dtn.es.net" },
+                { "name": "star-dtn.es.net" }
+            ]
+        }
+    },
+    
+    "tests": {
+        "disktodisk_test": {
+            "type": "disk-to-disk",
+            "spec": {
+                "source": "ftp://{% address[1] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
+                "dest": "file:///dev/null",
+                "timeout": "PT30S"
+            }
+        }
+    },
+    
+    "schedules": {
+        "schedule_PT30M": {
+            "repeat": "PT30M",
+            "sliprand": true,
+            "slip": "PT25M"
+        }
+    },
+    
+    "tasks": {
+        "gridftp_task": {
+            "group": "disktodisk_group",
+            "test": "disktodisk_test",
+            "schedule": "schedule_PT30M",
+            "archives": [ "nightly_archive" ],
+            "tools": [ "globus" ],
+            "_meta": {
+                "display-name": "GridFTP Tests"
+            }
+        }
+    }
+}
