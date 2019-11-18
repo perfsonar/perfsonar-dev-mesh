@@ -14,8 +14,8 @@
     },
     
     "addresses": {
-        "140.221.249.211": { 
-            "address": "140.221.249.211"
+        "140.221.250.102": { 
+            "address": "140.221.250.102"
         },
         "sunn-dtn.es.net": { 
             "address": "sunn-dtn.es.net",
@@ -56,7 +56,7 @@
             "type": "disjoint",
             "unidirectional": true,
             "a-addresses": [
-                { "name": "140.221.249.211" }
+                { "name": "140.221.250.102" }
             ],
             "b-addresses": [
                 { "name": "sunn-dtn.es.net" },
