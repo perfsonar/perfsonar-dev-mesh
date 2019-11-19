@@ -73,7 +73,7 @@
             "spec": {
                 "source": "ftp://{% address[1] %}:{% jq .addresses[1]._meta.gridftp_port %}{% jq .addresses[1]._meta.gridftp_filename %}",
                 "dest": "file:///dev/null",
-                "timeout": "PT30S"
+                "timeout": "PT60S"
             }
         }
     },
