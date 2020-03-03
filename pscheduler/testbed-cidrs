@@ -20,5 +20,11 @@
 2001:0468:2620:0031::/64
 
 
-# University of Michigan
-# TODO: Fill this in
+# aglt2.org @ University of Michigan
+192.41.230.0/23
+2001:48a8:68f7:1::/64
+
+# aglt2.org @ Michigan State University
+192.41.236.0/23  
+2001:48a8:68f7:8001::/64
+
