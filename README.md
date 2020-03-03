@@ -32,6 +32,10 @@ Configuring the nodes
 ---------------------
 On a newly installed perfSONAR measurement point, you need to edit `meshconfig-agent.conf` and point the `configuration_url` parameter to the published JSON file.  You also need to enable the `configure_archives` parameter so that measurement data is sent to the central MA.
 
+In the directory where this README file lives, install the self-updating pScheduler limit configuration file by running `make -C ./pscheduler install`.
+
+
+
 Deploying the JSON
 ------------------
 This section is for administrators installing these configuration files and scripts for the first time. If you just want to update the mesh, you can ignore this section.

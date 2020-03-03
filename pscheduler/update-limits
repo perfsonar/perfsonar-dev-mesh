@@ -1,0 +1,34 @@
+#!/bin/sh -e
+#
+# Update the pScheduler limits
+
+
+URL="https://raw.githubusercontent.com/perfsonar/perfsonar-dev-mesh/master/pscheduler/limits.conf"
+LIMITS=/etc/pscheduler/limits.conf
+
+WHOAMI=$(basename "$0")
+OUT=$(mktemp)
+
+cleanup()
+{
+    rm -f "${OUT}"
+}
+trap cleanup EXIT
+
+
+if [ "$(id -u)" -ne 0 ]
+then
+    echo "This program must be run as root." 1>&2
+    exit 1
+fi
+
+# This will die quietly on failure
+curl -s -o "${OUT}" "${URL}"
+
+# This will, too.
+pscheduler validate-limits --quiet "${OUT}"
+
+chown root.root "${OUT}"
+chmod 644 "${OUT}"
+
+mv -f "${OUT}" "${LIMITS}"
