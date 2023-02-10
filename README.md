@@ -1,74 +1,85 @@
-perfSONAR Development Testbed Configuration
-============================================
+# perfSONAR QA testbed
+This reposiory and this README file contain instructions and playbook to maintain perfSONAR hosts to participate to the perfSONAR Quality Assurance testbed. We will assume Ansible knowledge and previous experience with [perfSONAR](https://www.perfsonar.net), our [generic Ansible playbook](https://github.com/perfsonar/ansible-playbook-perfsonar/) and roles.
 
-This document contains the configuration files used to build the regular tests and associated dashboards run by the perfSONAR development team. It can also be used as an example for others wishing to deploy a similar infrastructure on their networks. It contains a set of configuration files that can be used as inputs to the perfSONAR Mesh Configuration software. It also contains a set of scripts that can be used to
+## Contributions
+If you want to use this setup and be part of our QA testbed, please [contact us](https://github.com/perfsonar/project/issues/new) explaining us how you want to help and what are the resources you can dedicate. Thank you.
 
-- deploy each configuration file as a JSON file on a web server
-- build a mesh configuration from those deployed JSON files.
+## Preparing your setup
+Once you have dedicated resources to commit to the perfSONAR QA testbed, use the following instructions.
 
-Updating the Mesh
------------------
-
-### Editing Current Mesh Files
-
-Checkout this source code repository then make your changes under the *conf* directory. Commit your changes to this repository and they will automatically be published as JSON [here](http://ps-test.ctc.grnoc.iu.edu/mesh_config/testbed.json) within 15 minutes.
-
-### Adding New Mesh Files
-
-Any mesh file added to the *conf* directory with the extension *.conf* will automatically get published by the scripts once you commit them.
-
-Updating the Dashboards
------------------------
-
-### Changing thesholds and pointing at new mesh files
-
-The *maddash* directory contains a file named *gui_agent_configuration.conf*. In this file you may change thresholds for grids, point a new JSON files and alter various other settings related to the display of the dashboards and their grids. Commit any changes to this repostory and they should be deployed within 30 minutes.
-
-### Changing Dashboard Names and Manually Defining Grids
-
-The *maddash* directory contains a file named *maddash.yaml.template*. This is the base maddash.yaml from which the generation scripts create a new maddash.yaml file. You can add any manual settings here. This includes organizing grids into a manually defined set of dashboards. It is also where you can manually define grids, such as those running checks not yet supported by MeshConfig or using non-standard test topologies. Commit any changes to this repostory and they should be deployed within 30 minutes.
-
-Configuring the nodes
----------------------
-On a newly installed perfSONAR measurement point, you need to edit `meshconfig-agent.conf` and point the `configuration_url` parameter to the published JSON file.  You also need to enable the `configure_archives` parameter so that measurement data is sent to the central MA.
-
-In the directory where this README file lives, install the self-updating pScheduler limit configuration file by running `make -C ./pscheduler install`.
-
-
-
-Deploying the JSON
-------------------
-This section is for administrators installing these configuration files and scripts for the first time. If you just want to update the mesh, you can ignore this section.
-
-### System Requirements
- * CentOS Line 6 or greater (other OSes require modifications to scripts)
- * perl-perfSONAR_PS-MeshConfig-BuildJSON (available from perfSONAR Yum)
- * Apache HTTPD
-
-### Installation
-You may install the configuration files and scripts from source on a web server you wish to use to publish your configurations as JSON files. The steps to checkout the code and setup the cron script are as follows:
+### Prepare your Ansible controller
+The playbook relies on some roles being present on your Ansible controller.  You can install them with a regular:
 ```
-mkdir -p /var/www/html/mesh_config
-cd /opt/perfsonar_ps
-git clone https://github.com/perfsonar/perfsonar-dev-mesh.git ./perfsonar-dev-mesh
-cp perfsonar-dev-mesh/scripts/cron-deploy-json /etc/crond.d/cron-deploy-json
+ansible-galaxy install -r  requirements.yml
 ```
 
-Deploying the Dashboard
------------------------
-This is a section for administrators installing the scripts to generate a MaDDash configuration for the first time. If you want to just change an existing deployment you may ignore this section. 
+### Create and provision your hosts
+You'll need to have machines ready with a basic OS install and an adminitration user (i.e. either root or a regular user with sudo/su access). Machines need to be reachable from your Ansible controller (the host where you'll be running the playbook contained in this repository). For ease of management, the default setup will create a `psadmin` user on each machine and add ssh keys to grant access to your team.
 
-### System Requirements
- * CentOS Line 6 or greater (other OSes require modifications to scripts)
- * perl-perfSONAR_PS-MeshConfig-GUIAgent (available from perfSONAR Yum)
- * maddash (available from perfSONAR Yum. See http://software.es.net/maddash)
+### Add your hosts to inventory
+Add your hosts in the Ansible inventory (`inventory/hosts` by default) in the perfSONAR category you will assign them, this is usually eithr ps_testpoint or ps_toolkit.
 
-### Installation
-You may install the configuration files and scripts from source on a MaDDash server. The steps to checkout the code and setup the cron script are as follows:
+### Configure variables
+Look into the various variables files in the inventory file and directory and adapt to your deployment.  Of particular interest are:
+* in `inventory/hosts`:
+  * `ansible_user` and `ansible_become_user`: depending on your setup
+* in `inventory/group_vars/all.yml`:
+  * `psadmin_user_keys`: public ssh keys of individuals accessing the testbed hosts
+  * to keep secret: `psadmin_password` but the `psadmin` is also granted sudo access without password.
+* from `inventory/group_vars/ps_archive.yml`:
+  * `perfsonar_archive_auth_list` add the IPs of your hosts to the list and push it to the git repository.
+* in `inventory/group_vars/ps_installer.yml`:
+  * `perfsonar_release` need to manage to have diversity in the mesh
+* in `inventory/group_vars/ps_testpoint.yml`:
+  * `perfsonar_ntp_servers` a good set of NTP servers for your hosts
+* in `inventory/group_vars/ps_toolkit.yml`:
+  * to keep secret: `perfsonar_web_passwd`
+
+
+### Prometheus monitoring
+To be added.
+
+## First run of the playbook
+After configuring the different variables, you can run the full playbook with something like one of the folowings (depending on your setup accessing your new hosts):
+```
+ansible-playbook site.yml
+ansible-playbook -u your_user -K site.yml
+ansible-playbook -u your_user -K -e bootstrap_user=your_user site.yml
+```
+
+If you don't want to run the bootstrapping or provisioning part, exclude the corresponding tag from your run with something like:
+```
+ansible-playbook --skip-tags bootstrap site.yml
+```
+
+## Maintenance of your setup
+Once the initial run has been done, you shouldn't need to run the playbook again. But it is indempotent and you can run it again without worry.
+
+## Notes
+In case you need a reference, the perfSONAR hosts management part of the setup described here is coming from our [regular perfSONAR Ansible playbook](https://github.com/perfsonar/ansible-playbook-perfsonar).
+
+Set up individual host variables with the lsregistration.yml template
 
 ```
-cd /opt/perfsonar_ps
-git clone https://github.com/perfsonar/perfsonar-dev-mesh.git ./perfsonar-dev-mesh
-cp perfsonar-dev-mesh/scripts/cron-generate-maddash-config /etc/crond.d/cron-generate-maddash-config
+mkdir inventory/host_vars/myhostname
+cp roles/ansible-role-perfsonar-testpoint/defaults/lsregistration.yml \
+  inventory/host_vars/myhostname
+vi inventory/host_vars/myhostname/lsregistration.yml
+```
+
+Run the playbook:
+
+```
+ansible-playbook perfsonar.yml
+```
+
+---
+
+**Some useful commands to manage the environment**
+
+Use Ansible ping to verify connectivity to targets:
+
+```
+ansible all -m ping
 ```
 

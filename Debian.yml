@@ -1,0 +1,6 @@
+# Debian & Ubuntu hosts only variables
+---
+psadmin_groups:  ['adm', 'sudo', 'staff']
+os_specific_packages:
+  - gpg
+  - software-properties-common

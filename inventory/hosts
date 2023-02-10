@@ -1,0 +1,37 @@
+# This is an Ansible inventory file in INI format. You can define a list of
+# hosts and groups to be managed by this particular inventory.
+#
+# Connection information can be added to groups, more information is
+# documented at: 
+# https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+#
+# A way to check that all of your expected hosts are accessable is:
+# ansible all -m ping --ask-become-pass
+#
+# Full perfSONAR hosts inventory grouped by installation bundle
+[all:vars]
+ansible_user=psadmin
+ansible_become=True
+ansible_become_user=root
+#ansible_become_method=su
+
+[ps_testpoint]
+ps-stretch
+
+[ps_toolkit]
+ps-bionic
+ps-beaver
+
+[ps_archive]
+
+[ps_maddash]
+
+[ps_psconfig_publisher]
+
+[ps_psconfig_web_admin]
+
+[qalab]
+ps-bionic	ansible_host=ps-bionic.qalab.geant.net
+ps-beaver	ansible_host=ps-beaver.qalab.geant.net
+ps-stretch	ansible_host=ps-stretch.qalab.geant.net
+

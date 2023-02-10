@@ -1,0 +1,50 @@
+# perfsonar.yml main perfSONAR config
+
+- name: perfSONAR archives
+  tags: 
+    - archives
+  hosts:
+    - ps_archive
+  roles:
+    - ansible-role-perfsonar-archive
+
+- name: perfSONAR MadDash
+  tags: 
+    - maddash
+  hosts:
+    - ps_maddash
+  roles:
+    - ansible-role-perfsonar-maddash
+
+- name: perfSONAR testpoints
+  tags: 
+    - testpoints
+  hosts:
+    - ps_testpoint
+  roles:
+    - ansible-role-perfsonar-testpoint
+
+- name: perfSONAR toolkit
+  tags: 
+    - toolkits
+  hosts:
+    - ps_toolkit
+  roles:
+    - ansible-role-perfsonar-toolkit
+
+- name: perfSONAR ps-config-publishers
+  tags: 
+    - psconfig-publishers
+  hosts:
+    - ps_psconfig_publisher
+  roles:
+    - ansible-role-perfsonar-psconfig-publisher
+
+- name: perfSONAR ps-config-web-admin
+  tags: 
+    - psconfig-web-admin
+  hosts:
+    - ps_psconfig_web_admin
+  roles:
+    - ansible-role-perfsonar-psconfig-web-admin
+

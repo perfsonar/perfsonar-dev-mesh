@@ -1,1 +1,0 @@
-*/15 * * * * root /opt/perfsonar_ps/perfsonar-dev-mesh/scripts/deploy_json_staging.sh > /tmp/deploy_json.sh.log 2>&1 

@@ -1,0 +1,104 @@
+# This a base playbook to install different perfSONAR flavours on a set of machines
+---
+
+# This first task can be replaced by any other provisioning setup you're using on your infrastructure.
+# Just make sure you can manage the hosts with Ansible
+- name: Bootstrap Ansible on all hosts
+  hosts: all
+  gather_facts: False
+  roles:
+    - role: ansible-role-bootstrap
+      tags: 'bootstrap'
+
+# User management, can be replaced by any other provisioning setup you're using on your infrastructure
+- name: User and group provisioning on all hosts
+  hosts: all
+  tags: ['boostrap', 'provisioning']
+  tasks:
+    - name: Load OS dependant variables
+      include_vars: "{{ item }}"
+      with_first_found:
+        - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+        - "{{ ansible_distribution }}.yml"
+        - "{{ ansible_os_family }}.yml"
+
+    - name: Add psadmin user
+      ansible.builtin.user:
+        name: psadmin
+        group: adm
+        groups: "{{ psadmin_groups }}"
+        password: "{{ psadmin_password | password_hash('sha512')}}"
+        shell: "/bin/bash"
+        state: present
+
+    - name: Add psadmin user to sudoers
+      ansible.builtin.copy:
+        content: "psadmin ALL=(ALL) NOPASSWD: ALL\n"
+        dest: "/etc/sudoers.d/z-admin"
+        # We name it z-admin to be the last file loaded so it has precedence.
+
+    - name: Authorise remote users to authenticate as psadmin
+      ansible.posix.authorized_key:
+        user: psadmin
+        state: present
+        key: '{{ psadmin_user_keys }}'
+
+    - name: Install additional useful packages
+      package:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - moreutils
+        - screen
+        - tree
+        - vim
+        - "{{ os_specific_packages | default([]) }}"
+
+# Import the perfSONAR playbook
+- import_playbook: perfsonar.yml
+
+# Prometheus monitoring related tasks
+- name: Prometheus node-exporter on all hosts
+  hosts: all
+  roles:
+    - role: ansible-prometheus-node-exporter
+      tags: ['provisioning', 'prometheus']
+
+- name: Add pScheduler and pSConfig cronjobs for Prometheus node-exporter
+  hosts: ps_testpoint, ps_toolkit
+  gather_facts: False
+  tags: ['provisioning', 'prometheus']
+
+  tasks:
+    - name: Add cronjob to run pscheduler metrics command every minute
+      cron:
+        name: "Run pscheduler metrics for Prometheus"
+        user: prometheus
+        cron_file: pscheduler-metrics
+        job: "pscheduler metrics --format prometheus | sponge {{prometheus_exporters_common_textfile_output}}/perfsonar-pscheduler.prom"
+ 
+    - name: Add cronjob to run psconfig pscheduler-stats command every 5 minutes
+      cron:
+        name: "Run psconfig pscheduler-stats for Prometheus"
+        user: prometheus
+        cron_file: psconfig-pscheduler-stats
+        job: "psconfig pscheduler-stats --format prometheus | sponge {{prometheus_exporters_common_textfile_output}}/perfsonar-psconfig-pscheduler-stats.prom"
+        minute: "*/5"
+
+#- name: Build Prometheus JSON targets file
+#  hosts: localhost
+#  gather_facts: False
+#  tags: ['provisioning', 'prometheus']
+#
+#  tasks:
+#    - name: Create JSON file containing all Prometheus node exporter instances
+#      template:
+#        # TODO: This doesn't work for the localhost target as localhost is not the same inside th Prometheus container
+#        src: prometheus-job.j2
+#        dest: "/opt/prometheus/perfsonar/targets.json"
+#        owner: ansible-user
+#        group: ansible-user
+
+# TODO:
+# apt autoremove from time to time
+# Or deploy the 50unattended-upgrades config file option: Unattended-Upgrade::Remove-Unused-Dependencies "true";

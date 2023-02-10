@@ -1,0 +1,8 @@
+---
+# defaults file for perfsonar-maddash
+# perfsonar_maddash_remotes:
+#   - state: [ present | absent ]
+#     url: url
+perfsonar_maddash_remotes: 
+  - state: present
+    url: https://raw.githubusercontent.com/perfsonar/perfsonar-dev-mesh/master/psconfig/testbed.json

@@ -1,0 +1,12 @@
+# Install perfsonar roles
+- src: https://github.com/perfsonar/ansible-role-perfsonar-archive
+- src: https://github.com/perfsonar/ansible-role-perfsonar-installer
+- src: https://github.com/perfsonar/ansible-role-perfsonar-maddash
+- src: https://github.com/perfsonar/ansible-role-perfsonar-testpoint
+- src: https://github.com/perfsonar/ansible-role-perfsonar-toolkit
+- src: https://github.com/perfsonar/ansible-role-perfsonar-psconfig-publisher
+- src: https://github.com/perfsonar/ansible-role-perfsonar-psconfig-web-admin
+# Some infrastructure roles
+- src: https://github.com/tonin/ansible-role-bootstrap
+  version: origin/perfsonar
+- src: https://github.com/tonin/ansible-prometheus-node-exporter

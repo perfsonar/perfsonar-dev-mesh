@@ -1,0 +1,4 @@
+# CentOS hosts only variables
+---
+psadmin_groups:  ['adm', 'systemd-journal', 'wheel']
+os_specific_packages: []
