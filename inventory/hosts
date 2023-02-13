@@ -15,12 +15,13 @@ ansible_become=True
 ansible_become_user=root
 #ansible_become_method=su
 
+# The perfSONAR related groups
 [ps_testpoint]
-ps-stretch
+ps-stretch      perfsonar_release=4.4-staging
 
 [ps_toolkit]
-ps-bionic
-ps-beaver
+ps-bionic       perfsonar_release=5.0-snapshot
+ps-beaver       perfsonar_release=4.4-staging
 
 [ps_archive]
 
@@ -30,8 +31,10 @@ ps-beaver
 
 [ps_psconfig_web_admin]
 
+# The organisations/infrastructure groups
 [qalab]
-ps-bionic	ansible_host=ps-bionic.qalab.geant.net
-ps-beaver	ansible_host=ps-beaver.qalab.geant.net
-ps-stretch	ansible_host=ps-stretch.qalab.geant.net
+ps-bionic       ansible_host=ps-bionic.qalab.geant.net
+ps-beaver       ansible_host=ps-beaver.qalab.geant.net
+ps-stretch      ansible_host=ps-stretch.qalab.geant.net
+
 
