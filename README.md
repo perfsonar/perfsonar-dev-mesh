@@ -17,7 +17,8 @@ ansible-galaxy install -r  requirements.yml
 You'll need to have machines ready with a basic OS install and an adminitration user (i.e. either root or a regular user with sudo/su access). Machines need to be reachable from your Ansible controller (the host where you'll be running the playbook contained in this repository). For ease of management, the default setup will create a `psadmin` user on each machine and add ssh keys to grant access to your team.
 
 ### Add your hosts to inventory
-Add your hosts in the Ansible inventory (`inventory/hosts` by default) and create a group for your organisation (ex: qalab). It's probably best to define a short name for your host in your group with the FQDN or IP as `ansible_host`.  Then add your hosts (short names) in the perfSONAR category you will assign them, this is usually either `ps_testpoint` or `ps_toolkit` and choose one of the `perfsonar_release` you want to assign them to (take a look inside `inventory/group_vars/ps_installer.yml` to know the different options, it depends on the distro your host is running).
+1. Add your hosts in the Ansible inventory (`inventory/hosts` by default) and create a group for your organisation (ex: qalab). It's probably best to define a short name for your host in your group with the FQDN or IP as `ansible_host`.
+1. Then add your hosts (short names) in the perfSONAR category you will assign them, this is usually either `ps_testpoint` or `ps_toolkit` and choose one of the `perfsonar_release` you want to assign them to (take a look inside `inventory/group_vars/ps_installer.yml` to know the different options, it depends on the distro your host is running).
 
 ### Configure variables
 Look into the various variables files in the inventory file and directory and adapt to your deployment.  Of particular interest are:
@@ -49,6 +50,13 @@ If you don't want to run the bootstrapping or provisioning part, exclude the cor
 ```
 ansible-playbook --skip-tags bootstrap site.yml -l qalab
 ```
+
+## Sharing our deployments
+There are 2 files that need to be shared back and forth between the different Ansible controlers: 
+* `inventory/hosts` as this list all hosts that are part of the mesh so we know what we can expect
+* `inventory/group_vars/ps_archive.yml` that contains the list of IP/ranges that should be authorised to post to the central archive
+
+Once your deployment is ready, please post an updated version of those files to this same reposiory.
 
 ## Maintenance of your setup
 Once the initial run has been done, you shouldn't need to run the playbook again. But it is indempotent and you can run it again without worry.
