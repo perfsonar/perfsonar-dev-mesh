@@ -23,6 +23,7 @@
         - "{{ ansible_os_family }}.yml"
 
     - name: Add psadmin user
+      when: psadmin_password != None
       ansible.builtin.user:
         name: psadmin
         group: adm
@@ -32,12 +33,14 @@
         state: present
 
     - name: Add psadmin user to sudoers
+      when: psadmin_password != None
       ansible.builtin.copy:
         content: "psadmin ALL=(ALL) NOPASSWD: ALL\n"
         dest: "/etc/sudoers.d/z-admin"
         # We name it z-admin to be the last file loaded so it has precedence.
 
     - name: Authorise remote users to authenticate as psadmin
+      when: psadmin_password != None
       ansible.posix.authorized_key:
         user: psadmin
         state: present

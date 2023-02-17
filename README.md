@@ -26,7 +26,7 @@ Look into the various variables files in the inventory file and directory and ad
   * `ansible_user` and `ansible_become_user`: depending on your setup
 * in `inventory/group_vars/all.yml`:
   * `psadmin_user_keys`: public ssh keys of individuals accessing the testbed hosts
-  * to keep secret: `psadmin_password` but the `psadmin` is also granted sudo access without password.
+  * to keep secret: `psadmin_password` but the `psadmin` is also granted sudo access without password.  Note that if this is `None`, the `psadmin` account will not be created at all.
 * from `inventory/group_vars/ps_archive.yml`:
   * `perfsonar_archive_auth_list` add the IPs of your hosts to the list and push it to the git repository.
 * in `inventory/group_vars/ps_testpoint.yml`:
