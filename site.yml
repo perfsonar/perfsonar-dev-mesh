@@ -51,7 +51,6 @@
         name: "{{ item }}"
         state: latest
       with_items:
-        - moreutils
         - screen
         - tree
         - vim
