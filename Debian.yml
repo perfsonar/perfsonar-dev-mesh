@@ -3,5 +3,4 @@
 psadmin_groups:  ['adm', 'sudo', 'staff']
 os_specific_packages:
   - gpg
-  - moreutils
   - software-properties-common

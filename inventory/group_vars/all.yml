@@ -2,3 +2,8 @@
 ---
 psadmin_password:
 psadmin_user_keys:
+general_useful_packages:
+  - moreutils
+  - screen
+  - tree
+  - vim

@@ -10,6 +10,9 @@
     - role: ansible-role-bootstrap
       tags: 'bootstrap'
 
+# Import the perfSONAR playbook
+- import_playbook: perfsonar.yml
+
 # User management, can be replaced by any other provisioning setup you're using on your infrastructure
 - name: User and group provisioning on all hosts
   hosts: all
@@ -50,14 +53,10 @@
       package:
         name: "{{ item }}"
         state: latest
+      # Some packages listed here require EPEL or other repositories added with perfSONAR installation
       with_items:
-        - screen
-        - tree
-        - vim
+        - "{{ general_useful_packages | default([]) }}"
         - "{{ os_specific_packages | default([]) }}"
-
-# Import the perfSONAR playbook
-- import_playbook: perfsonar.yml
 
 # Prometheus monitoring related tasks
 - name: Prometheus node-exporter on all hosts
