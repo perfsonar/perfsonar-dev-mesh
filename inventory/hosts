@@ -22,6 +22,7 @@ ps-stretch      perfsonar_release=4.4-staging
 [ps_toolkit]
 ps-bionic       perfsonar_release=5.0-snapshot
 ps-beaver       perfsonar_release=4.4-staging
+ps-centos7      perfsonar_release=nightly-minor
 
 [ps_archive]
 
@@ -36,5 +37,6 @@ ps-beaver       perfsonar_release=4.4-staging
 ps-bionic       ansible_host=ps-bionic.qalab.geant.net
 ps-beaver       ansible_host=ps-beaver.qalab.geant.net
 ps-stretch      ansible_host=ps-stretch.qalab.geant.net
+ps-centos7      ansible_host=ps-centos7.qalab.geant.net
 
 
