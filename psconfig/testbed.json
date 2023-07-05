@@ -1,0 +1,806 @@
+{
+    "_meta": {
+        "administrators": [
+            {
+                "email": "pSDevTeam@perfsonar.net",
+                "name": "pS Collaboration Dev Team"
+            }
+        ],
+        "display-name": "pS Collaboration pSconfig"
+    },
+    "addresses": {
+        "psmp.perfsonar.net": {
+            "_meta": {
+                "display-name": "psmp.perfsonar.net"
+            },
+            "address": "psmp.perfsonar.net",
+            "host": "perfSonar_net"
+        }
+        "t2-psdev.rrze.uni-erlangen.de": {
+            "_meta": {
+                "display-name": "t2-psdev.rrze.uni-erlangen.de"
+            },
+            "address": "t2-psdev.rrze.uni-erlangen.de",
+            "host": "Germany_Erlangen"
+        }
+    },
+    "archives": {
+        "pS_Central_MA": {
+            "archiver": "http",
+            "data": {
+                "measurement-agent": "{% scheduled_by_address %}",
+                "url": "https://central.ma.ps.net"
+            }
+        }
+    },
+    "groups": {
+       "g.owamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.twamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.iperf3TCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.iperf3UDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.nuttcpUDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.nuttcpTCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.innocuous": {
+          "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g.dns+http": {
+         "a-addresses": [
+           { "name" : "psmp.perfsonar.net" }
+          ],
+         "b-addresses": [
+           { "name" : "www.perfsonar.net" },
+           { "name" : "software.internet2.edu" },
+           { "name" : "downloads.perfsonar.net" }
+         ],
+         "type": "disjoint",
+         "unidirectional": true
+       },
+       "gIP4.owamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.twamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.iperf3TCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.iperf3UDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.nuttcpUDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.nuttcpTCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP4.innocuous": {
+          "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g4.dns+http": {
+         "a-addresses": [
+           { "name" : "psmp.perfsonar.net" }
+          ],
+         "b-addresses": [
+           { "name" : "www.perfsonar.net" },
+           { "name" : "software.internet2.edu" },
+           { "name" : "downloads.perfsonar.net" }
+         ],
+         "type": "disjoint",
+         "unidirectional": true
+       },
+       "gIP6.owamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.twamp": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.iperf3TCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.iperf3UDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.nuttcpUDP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.nuttcpTCP": {
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "gIP6.innocuous": {
+          "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
+           { "name" : "psmp.perfsonar.net" }
+       },
+       "g6.dns+http": {
+         "a-addresses": [
+           { "name" : "psmp.perfsonar.net" }
+          ],
+         "b-addresses": [
+           { "name" : "www.perfsonar.net" },
+           { "name" : "software.internet2.edu" },
+           { "name" : "downloads.perfsonar.net" }
+         ],
+         "type": "disjoint",
+         "unidirectional": true
+       }
+    },
+    "hosts": {
+       "perfSonar_net": {
+           "_meta": {
+               "display-name": "perfSonar_net",
+               "organization-display-name": "None"
+           },
+           "archives": [
+               "is_this_an_override_for_global"
+           ]
+       },
+       "Germany_Erlangen": {
+           "_meta": {
+               "display-name": "Germany_Erlangen",
+               "organization-display-name": "RRZE"
+           },
+           "archives": [
+               "is_this_an_override_for_global"
+           ]
+       }
+    },
+    "schedules": {
+        "8hours": {
+            "repeat": "PT28800S",
+            "slip": "PT19200S",
+            "sliprand": true
+        },
+        "4hours": {
+            "repeat": "PT14400S",
+            "slip": "PT10000S",
+            "sliprand": true
+        },
+        "1hour": {
+            "repeat": "PT3600S",
+            "slip": "PT1800S",
+            "sliprand": true
+        },
+        "30min": {
+            "repeat": "PT1800S",
+            "slip": "PT1200S",
+            "sliprand": true
+        }
+        "10min": {
+            "repeat": "PT600S",
+            "slip": "PT300S",
+            "sliprand": true
+        }
+    },
+    "tasks": {
+        "nuttcp_UDP": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.nuttcpUDP",
+           "schedule": "8hours",
+           "test": "t.bwUDP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "nuttcp_TCP": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.nuttcpTCP",
+           "schedule": "8hours",
+           "test": "t.bwTCP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "iperf3_UDP": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.iperf3UDP",
+           "schedule": "8hours",
+           "test": "t.bwUDP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "iperf3_TCP": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.iperf3TCP",
+           "schedule": "8hours",
+           "test": "t.bwTCP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "owamp": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g.owamp",
+           "test": "t.owd",
+           "schedule": "4hours",
+           "tools": [
+             "owping"
+           ]
+         },
+        "twamp": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g.owamp",
+           "test": "t.owd",
+           "schedule": "4hours",
+           "tools": [
+             "twping"
+           ]
+         },
+        "traceroute": {
+           "_meta": {
+               "display-name": "Traceroute"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.innocuous",
+           "schedule": "10min",
+           "test": "t.trace"
+        },
+        "rtt": {
+           "_meta": {
+               "display-name": "Ping"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.innocuous",
+           "schedule": "10min",
+           "test": "t.rtt"
+        },
+        "OWD-BG": {
+           "_meta": {
+               "display-name": "OWD Background"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.innocuous",
+           "test": "t.owdBG"
+        },
+        "DNS": {
+           "_meta": {
+               "display-name": "DNS resolution"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.dns+http",
+           "schedule": "30min",
+           "test": "t.dns"
+        },
+        "HTTP": {
+           "_meta": {
+               "display-name": "HTTP connection"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g.dns+http",
+           "schedule": "30min",
+           "test": "t.http"
+        },
+        "nuttcp_UDP4": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.nuttcpUDP",
+           "schedule": "8hours",
+           "test": "t4.bwUDP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "nuttcp_TCP4": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.nuttcpTCP",
+           "schedule": "8hours",
+           "test": "t4.bwTCP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "iperf3_UDP4": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.iperf3UDP",
+           "schedule": "8hours",
+           "test": "t4.bwUDP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "iperf3_TCP4": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.iperf3TCP",
+           "schedule": "8hours",
+           "test": "t4.bwTCP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "owamp4": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g4.owamp",
+           "test": "t4.owd",
+           "schedule": "4hours",
+           "tools": [
+             "owping"
+           ]
+         },
+        "twamp4": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g4.owamp",
+           "test": "t4.owd",
+           "schedule": "4hours",
+           "tools": [
+             "twping"
+           ]
+         },
+        "traceroute4": {
+           "_meta": {
+               "display-name": "Traceroute"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.innocuous",
+           "schedule": "10min",
+           "test": "t4.trace"
+        },
+        "rtt4": {
+           "_meta": {
+               "display-name": "Ping"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.innocuous",
+           "schedule": "10min",
+           "test": "t4.rtt"
+        },
+        "OWD-BG4": {
+           "_meta": {
+               "display-name": "OWD Background"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.innocuous",
+           "test": "t4.owdBG"
+        },
+        "HTTP4": {
+           "_meta": {
+               "display-name": "HTTP connection"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g4.dns+http",
+           "schedule": "30min",
+           "test": "t4.http"
+        },
+        "nuttcp_UDP6": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.nuttcpUDP",
+           "schedule": "8hours",
+           "test": "t6.bwUDP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "nuttcp_TCP6": {
+           "_meta": {
+               "display-name": "nuttcp TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.nuttcpTCP",
+           "schedule": "8hours",
+           "test": "t6.bwTCP",
+           "tools": [
+               "nuttcp"
+           ]
+        },
+        "iperf3_UDP6": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.iperf3UDP",
+           "schedule": "8hours",
+           "test": "t6.bwUDP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "iperf3_TCP6": {
+           "_meta": {
+               "display-name": "iperf3 TCP Test Between Testbeds"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.iperf3TCP",
+           "schedule": "8hours",
+           "test": "t6.bwTCP",
+           "tools": [
+               "iperf3"
+           ]
+        },
+        "owamp6": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g6.owamp",
+           "test": "t6.owd",
+           "schedule": "4hours",
+           "tools": [
+             "owping"
+           ]
+         },
+        "twamp6": {
+           "_meta": {
+                "pSDevTEST": true
+           },
+           "group": "g6.owamp",
+           "test": "t6.owd",
+           "schedule": "4hours",
+           "tools": [
+             "twping"
+           ]
+         },
+        "traceroute6": {
+           "_meta": {
+               "display-name": "Traceroute"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.innocuous",
+           "schedule": "10min",
+           "test": "t6.trace"
+        },
+        "rtt6": {
+           "_meta": {
+               "display-name": "Ping"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.innocuous",
+           "schedule": "10min",
+           "test": "t6.rtt"
+        },
+        "OWD-BG6": {
+           "_meta": {
+               "display-name": "OWD Background"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.innocuous",
+           "test": "t6.owdBG"
+        },
+        "HTTP6": {
+           "_meta": {
+               "display-name": "HTTP connection"
+           },
+           "reference": {
+               "pSDevTEST": true
+           },
+           "group": "g6.dns+http",
+           "schedule": "30min",
+           "test": "t6.http"
+        }
+    },
+    "tests": {
+        "t.bwUDP": {
+            "spec": {
+                "udp": true,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t4.bwUDP": {
+            "spec": {
+                "udp": true,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "ip-version": 4,
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t6.bwUDP": {
+            "spec": {
+                "udp": true,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "ip-version": 6,
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t.bwTCP": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t4.bwTCP": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "ip-version": 4,
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t6.bwTCP": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "duration": "PT20S",
+                "ip-version": 6,
+                "omit": "PT8S",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "throughput"
+        },
+        "t.owdBG": {
+            "spec": {
+                "bucket-width": 0.0001,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "flip": "{% flip %}",
+                "packet-count": 600,
+                "packet-interval": 0.1,
+                "packet-padding": 0,
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "latencybg"
+        },
+        "t.owdBG4": {
+            "spec": {
+                "bucket-width": 0.0001,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "flip": "{% flip %}",
+                "ip-version": 4,
+                "packet-count": 600,
+                "packet-interval": 0.1,
+                "packet-padding": 0,
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "latencybg"
+        },
+        "t.owdBG6": {
+            "spec": {
+                "bucket-width": 0.0001,
+                "dest": "{% address[1] %}",
+                "dest-node": "{% pscheduler_address[1] %}",
+                "flip": "{% flip %}",
+                "ip-version": 6,
+                "packet-count": 600,
+                "packet-interval": 0.1,
+                "packet-padding": 0,
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "latencybg"
+        },
+        "t.trace": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "hops": 64,
+                "length": 40,
+                "probe-type": "udp",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "trace"
+        },
+        "t4.trace": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "hops": 64,
+                "ip-version": 4,
+                "length": 40,
+                "probe-type": "udp",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "trace"
+        },
+        "t6.trace": {
+            "spec": {
+                "dest": "{% address[1] %}",
+                "hops": 64,
+                "ip-version": 6,
+                "length": 40,
+                "probe-type": "udp",
+                "source": "{% address[0] %}",
+                "source-node": "{% pscheduler_address[0] %}"
+            },
+            "type": "trace"
+        },
+        "t.dns": {
+            "spec": {
+                "record": "a",
+                "query": "{% address[1] %}",
+		            "host": "{% address[0] %}"
+            },
+            "type": "dns"
+        },
+        "t.http": {
+            "spec": {
+                "url": "{% address[1] %}",
+		        "host": "{% address[0] %}"
+            },
+            "type": "http"
+        },
+        "t.rtt": {
+            "spec": {
+                "source": "{% address[0] %}",
+                "dest": "{% address[1] %}"
+            },
+            "type": "rtt"
+        }
+        "t4.rtt": {
+            "spec": {
+                "ip-version": 4,
+                "source": "{% address[0] %}",
+                "dest": "{% address[1] %}"
+            },
+            "type": "rtt"
+        }
+        "t6.rtt": {
+            "spec": {
+                "ip-version": 6,
+                "source": "{% address[0] %}",
+                "dest": "{% address[1] %}"
+            },
+            "type": "rtt"
+        },
+        "t.owd":{
+            "type":"latency",
+            "spec":{
+                "source":"{% address[0] %}",
+                "source-node":"{% pscheduler_address[0] %}",
+                "dest":"{% address[1] %}",
+                "packet-interval":0.01,
+                "data-ports":{
+                    "upper":64700,
+                    "lower":64600
+                },
+                "packet-padding":1000,
+                "bucket-width":0.001,
+                "packet-count":500,
+            }
+        },
+        "t4.owd":{
+            "type":"latency",
+            "spec":{
+                "source":"{% address[0] %}",
+                "source-node":"{% pscheduler_address[0] %}",
+                "dest":"{% address[1] %}",
+                "packet-interval":0.01,
+                "data-ports":{
+                    "upper":64700,
+                    "lower":64600
+                },
+                "packet-padding":1000,
+                "bucket-width":0.001,
+                "packet-count":500,
+                "ip-version":4
+            }
+        },
+        "t6.owd":{
+            "type":"latency",
+            "spec":{
+                "source":"{% address[0] %}",
+                "source-node":"{% pscheduler_address[0] %}",
+                "dest":"{% address[1] %}",
+                "packet-interval":0.01,
+                "data-ports":{
+                    "upper":64700,
+                    "lower":64600
+                },
+                "packet-padding":1000,
+                "bucket-width":0.001,
+                "packet-count":500,
+                "ip-version":6
+            }
+        },
+
+    }
+}
