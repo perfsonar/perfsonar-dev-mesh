@@ -15,7 +15,7 @@
             },
             "address": "psmp.perfsonar.net",
             "host": "perfSonar_net"
-        }
+        },
         "t2-psdev.rrze.uni-erlangen.de": {
             "_meta": {
                 "display-name": "t2-psdev.rrze.uni-erlangen.de"
@@ -35,26 +35,47 @@
     },
     "groups": {
        "g.owamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.twamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.iperf3TCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.iperf3UDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.nuttcpUDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.nuttcpTCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.innocuous": {
           "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g.dns+http": {
          "a-addresses": [
@@ -69,26 +90,47 @@
          "unidirectional": true
        },
        "gIP4.owamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.twamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.iperf3TCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.iperf3UDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.nuttcpUDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.nuttcpTCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP4.innocuous": {
           "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g4.dns+http": {
          "a-addresses": [
@@ -103,26 +145,47 @@
          "unidirectional": true
        },
        "gIP6.owamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.twamp": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.iperf3TCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.iperf3UDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.nuttcpUDP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.nuttcpTCP": {
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "gIP6.innocuous": {
           "_meta": { "used for tests": ["RTT", "Trace", "owdBG" ] },
-           { "name" : "psmp.perfsonar.net" }
+          "addresses" : [
+             { "name" : "psmp.perfsonar.net" }
+          ],
+          "type" : "mesh"
        },
        "g6.dns+http": {
          "a-addresses": [
@@ -177,7 +240,7 @@
             "repeat": "PT1800S",
             "slip": "PT1200S",
             "sliprand": true
-        }
+        },
         "10min": {
             "repeat": "PT600S",
             "slip": "PT300S",
@@ -734,7 +797,7 @@
                 "dest": "{% address[1] %}"
             },
             "type": "rtt"
-        }
+        },
         "t4.rtt": {
             "spec": {
                 "ip-version": 4,
@@ -742,7 +805,7 @@
                 "dest": "{% address[1] %}"
             },
             "type": "rtt"
-        }
+        },
         "t6.rtt": {
             "spec": {
                 "ip-version": 6,
@@ -764,7 +827,7 @@
                 },
                 "packet-padding":1000,
                 "bucket-width":0.001,
-                "packet-count":500,
+                "packet-count":500
             }
         },
         "t4.owd":{
@@ -800,7 +863,6 @@
                 "packet-count":500,
                 "ip-version":6
             }
-        },
-
+        }
     }
 }
