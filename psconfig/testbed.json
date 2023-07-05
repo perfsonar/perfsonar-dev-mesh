@@ -25,11 +25,11 @@
         }
     },
     "archives": {
-        "pS_Central_MA": {
+        "pS_Testbed_MA": {
             "archiver": "http",
             "data": {
                 "measurement-agent": "{% scheduled_by_address %}",
-                "url": "https://central.ma.ps.net"
+                "url": "tb-archive.ps.dev.internet2.edu"
             }
         }
     },
@@ -256,6 +256,9 @@
                "pSDevTEST": true
            },
            "group": "g.nuttcpUDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t.bwUDP",
            "tools": [
@@ -270,6 +273,9 @@
                "pSDevTEST": true
            },
            "group": "g.nuttcpTCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t.bwTCP",
            "tools": [
@@ -284,6 +290,9 @@
                "pSDevTEST": true
            },
            "group": "g.iperf3UDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t.bwUDP",
            "tools": [
@@ -298,6 +307,9 @@
                "pSDevTEST": true
            },
            "group": "g.iperf3TCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t.bwTCP",
            "tools": [
@@ -310,6 +322,9 @@
            },
            "group": "g.owamp",
            "test": "t.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "owping"
@@ -321,6 +336,9 @@
            },
            "group": "g.owamp",
            "test": "t.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "twping"
@@ -334,6 +352,9 @@
                "pSDevTEST": true
            },
            "group": "g.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t.trace"
         },
@@ -345,6 +366,9 @@
                "pSDevTEST": true
            },
            "group": "g.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t.rtt"
         },
@@ -366,6 +390,9 @@
                "pSDevTEST": true
            },
            "group": "g.dns+http",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "30min",
            "test": "t.dns"
         },
@@ -377,6 +404,9 @@
                "pSDevTEST": true
            },
            "group": "g.dns+http",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "30min",
            "test": "t.http"
         },
@@ -388,6 +418,9 @@
                "pSDevTEST": true
            },
            "group": "g4.nuttcpUDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t4.bwUDP",
            "tools": [
@@ -402,6 +435,9 @@
                "pSDevTEST": true
            },
            "group": "g4.nuttcpTCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t4.bwTCP",
            "tools": [
@@ -416,6 +452,9 @@
                "pSDevTEST": true
            },
            "group": "g4.iperf3UDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t4.bwUDP",
            "tools": [
@@ -430,6 +469,9 @@
                "pSDevTEST": true
            },
            "group": "g4.iperf3TCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t4.bwTCP",
            "tools": [
@@ -442,6 +484,9 @@
            },
            "group": "g4.owamp",
            "test": "t4.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "owping"
@@ -453,6 +498,9 @@
            },
            "group": "g4.owamp",
            "test": "t4.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "twping"
@@ -466,6 +514,9 @@
                "pSDevTEST": true
            },
            "group": "g4.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t4.trace"
         },
@@ -477,6 +528,9 @@
                "pSDevTEST": true
            },
            "group": "g4.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t4.rtt"
         },
@@ -498,6 +552,9 @@
                "pSDevTEST": true
            },
            "group": "g4.dns+http",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "30min",
            "test": "t4.http"
         },
@@ -509,6 +566,9 @@
                "pSDevTEST": true
            },
            "group": "g6.nuttcpUDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t6.bwUDP",
            "tools": [
@@ -523,6 +583,9 @@
                "pSDevTEST": true
            },
            "group": "g6.nuttcpTCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t6.bwTCP",
            "tools": [
@@ -537,6 +600,9 @@
                "pSDevTEST": true
            },
            "group": "g6.iperf3UDP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t6.bwUDP",
            "tools": [
@@ -551,6 +617,9 @@
                "pSDevTEST": true
            },
            "group": "g6.iperf3TCP",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "8hours",
            "test": "t6.bwTCP",
            "tools": [
@@ -563,6 +632,9 @@
            },
            "group": "g6.owamp",
            "test": "t6.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "owping"
@@ -574,6 +646,9 @@
            },
            "group": "g6.owamp",
            "test": "t6.owd",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "4hours",
            "tools": [
              "twping"
@@ -587,6 +662,9 @@
                "pSDevTEST": true
            },
            "group": "g6.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t6.trace"
         },
@@ -598,6 +676,9 @@
                "pSDevTEST": true
            },
            "group": "g6.innocuous",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "10min",
            "test": "t6.rtt"
         },
@@ -619,6 +700,9 @@
                "pSDevTEST": true
            },
            "group": "g6.dns+http",
+           "archives" : [
+              "pS_Testbed_MA"
+           ],
            "schedule": "30min",
            "test": "t6.http"
         }
